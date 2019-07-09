@@ -3,7 +3,6 @@ import './app.css';
 
 const proxyurl = "https://cors-anywhere.herokuapp.com/";
 const apiData = 'http://taskmaster-dev.us-east-2.elasticbeanstalk.com/tasks';
-//const apiData = 'http://localhost:5000/tasks';
 
 function Tasks() {
 const [tasks, setTasks] = useState([]);
@@ -26,6 +25,16 @@ return (
 <p>description: <span>{task.description}</span></p>
 <p>Status: <span>{task.status}</span></p>
 <p>Assignee: <span>{task.assignee}</span></p>
+<img alt="" src={`${task.pic}`}></img>
+<div className="App">
+      <form action={`${apiData}/${task.id}/images`} method="post" encType="multipart/form-data">
+        <label>
+          <span>Upload Image</span>
+          <input name="file" type="file" />
+        </label>
+        <button>Save</button>
+      </form>
+    </div>
 <hr></hr>
 </summary>
 </li>

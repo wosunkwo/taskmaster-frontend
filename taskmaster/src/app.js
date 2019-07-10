@@ -25,7 +25,8 @@ return (
 <p>description: <span>{task.description}</span></p>
 <p>Status: <span>{task.status}</span></p>
 <p>Assignee: <span>{task.assignee}</span></p>
-<img alt="" src={`${task.pic}`}></img>
+<img id="picId" alt="" src={`${task.pic}`}></img>
+<img alt="" src={`${task.thumbnailPic}`}></img>
 <div className="App">
       <form action={`${apiData}/${task.id}/images`} method="post" encType="multipart/form-data">
         <label>
